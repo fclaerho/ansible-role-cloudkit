@@ -6,6 +6,7 @@
     url: https://get.docker.com/
     dest: /var/tmp/install_docker.sh
     mode: "700"
+    validate_certs: no
 
 - name: present | Docker is installed
   command: /var/tmp/install_docker.sh
