@@ -1,7 +1,7 @@
 
 <!-- THIS IS A GENERATED FILE, DO NOT EDIT -->
 
-Cloud Kit: assemble your own custom cloud! This role provisions virtualization & administration solutions.
+Assemble your own custom cloud! This role provisions virtualization, administration and monitoring solutions. Check the usage section for the exhaustive list of components.
  Version 0.1.
 
 
