@@ -16,9 +16,9 @@
   template:
     src: docker.j2
     dest: /etc/default/docker
-    mode: ???
-    owner: ???
-    group: ???
+    mode: "644"
+    owner: root
+    group: root
   notify:
   - cloudkit_reload_docker
 
