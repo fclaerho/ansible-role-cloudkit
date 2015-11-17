@@ -1,14 +1,21 @@
 ---
 
+# this is currently broken on Debian 7 as the CA is missing apparently
+# - name: present | Docker installation script is present
+#   environment: "{{ cloudkit_environment }}"
+#   get_url:
+#     url: https://get.docker.com/
+#     dest: /var/tmp/install_docker.sh
+#     mode: "700"
+
 - name: present | Docker installation script is present
   environment: "{{ cloudkit_environment }}"
-  get_url:
-    url: https://get.docker.com/
-    dest: /var/tmp/install_docker.sh
-    mode: "700"
+  command: "curl -sSL https://get.docker.com/ -o {{ cloudkit_docker_installer_path }}"
+  args:
+    creates: "{{ cloudkit_docker_installer_path }}"
 
 - name: present | Docker is installed
-  command: /var/tmp/install_docker.sh
+  command: "{{ cloudkit_docker_installer_path }}"
   args:
     creates: /usr/bin/docker
 

@@ -16,5 +16,5 @@
 
 - name: absent | Docker installation script is absent
   file:
-    path: /var/tmp/install_docker.sh
+    path: "{{ cloudkit_docker_installer_path }}"
     state: absent

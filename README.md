@@ -16,6 +16,7 @@ Assemble your own custom cloud! This role provisions virtualization, administrat
 |------|-------|-------------|
 | `cloudkit_docker_address` | _default_ `0.0.0.0` |  |
 | `cloudkit_docker_autostart` | _default_ `True` |  |
+| `cloudkit_docker_installer_path` | _var_ `/var/tmp/install_docker.sh` |  |
 | `cloudkit_docker_port` | _default_ `8090` |  |
 | `cloudkit_docker_state` | _default_ `ignored` |  |
 | `cloudkit_environment` | _default_ `{}` | Common environment variables, such as http_proxy |
