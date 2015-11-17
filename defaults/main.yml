@@ -1,0 +1,10 @@
+---
+
+# common
+cloudkit_environment: {}
+
+# docker
+cloudkit_docker_autostart: yes
+cloudkit_docker_address: 0.0.0.0
+cloudkit_docker_state: ignored
+cloudkit_docker_port: 8090

@@ -1,0 +1,20 @@
+---
+
+- name: absent | Docker service is stopped
+  service:
+    name: docker
+    state: stopped
+    enabled: no
+  ignore_errors: yes
+
+# to be completed…
+
+- name: absent | Docker configuration is absent
+  file:
+    path: /etc/default/docker
+    state: absent
+
+- name: absent | Docker installation script is absent
+  file:
+    path: /var/tmp/install_docker.sh
+    state: absent

@@ -1,0 +1,18 @@
+---
+dependencies: []
+galaxy_info:
+  author: Florent Claerhout <code@fclaerhout.fr>
+  description: >
+  	Cloud Kit: assemble your own custom cloud!
+  	This role provisions virtualization & administration solutions.
+  license: MIT
+  min_ansible_version: 1.8.4
+  platforms: []
+include_when:
+  docker_present.yml: cloudkit_docker_state == "present"
+  docker_absent.yml: cloudkit_docker_state == "absent"
+#maintenance_complement: Optional. Indicate additional maintenance instructions.
+#usage_complement: Optional. Indicate additional usage instructions.
+variables:
+  cloudkit_environment: "Common environment variables, such as http_proxy"
+version: 0.1
