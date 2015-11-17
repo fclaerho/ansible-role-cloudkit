@@ -15,7 +15,7 @@
     creates: "{{ cloudkit_docker_installer_path }}"
 
 - name: present | Docker is installed
-  command: "{{ cloudkit_docker_installer_path }}"
+  command: "/bin/sh {{ cloudkit_docker_installer_path }}"
   args:
     creates: /usr/bin/docker
 
