@@ -3,10 +3,7 @@
 # DOC: https://github.com/retspen/webvirtmgr/wiki/Install-WebVirtMgr
 
 - debug:
-    msg: |
-      ****************************
-      * webvirtmgr state=present *
-      ****************************
+    msg: —————— webvirtmgr state=present ——————
 
 - name: Webvirtmgr support packages are present
   apt:
