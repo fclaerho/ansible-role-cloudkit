@@ -5,7 +5,7 @@
     name: docker
     state: reloaded
 
-- name: cloudkit_restart_supervisor
+- name: cloudkit_reload_supervisor
   service:
     name: supervisor
-    state: restarted
+    state: reloaded
