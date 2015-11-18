@@ -8,3 +8,9 @@
 - include: docker_present.yml
   name: Taskfile docker_present.yml is included
   when: cloudkit_docker_state == "present"
+- include: webvirtmgr_absent.yml
+  name: Taskfile webvirtmgr_absent.yml is included
+  when: cloudkit_webvirtmgr_state == "absent"
+- include: webvirtmgr_present.yml
+  name: Taskfile webvirtmgr_present.yml is included
+  when: cloudkit_webvirtmgr_state == "present"

@@ -18,9 +18,12 @@ galaxy_info:
 version: 0.1
 prefix: cloudkit_
 include_when:
+  webvirtmgr_present.yml: cloudkit_webvirtmgr_state == "present"
+  webvirtmgr_absent.yml: cloudkit_webvirtmgr_state == "absent"
   docker_present.yml: cloudkit_docker_state == "present"
   docker_absent.yml: cloudkit_docker_state == "absent"
 variables:
   cloudkit_environment: "Common environment variables, such as http_proxy"
-#maintenance_complement: Optional. Indicate additional maintenance instructions.
-#usage_complement: Optional. Indicate additional usage instructions.
+usage_complement: |
+  By default, this role does nothing as all `*_state` variables are set to `ignored`.
+  For the components you're interested in, set the `*_state` variables to `present` or `absent.

@@ -20,6 +20,7 @@ Assemble your own custom cloud! This role provisions virtualization, administrat
 | `cloudkit_docker_port` | _default_ `8090` |  |
 | `cloudkit_docker_state` | _default_ `ignored` |  |
 | `cloudkit_environment` | _default_ `{}` | Common environment variables, such as http_proxy |
+| `cloudkit_webvirtmgr_state` | _default_ `ignored` |  |
 
 
 
@@ -32,6 +33,8 @@ register its ID in the `dependencies` list of the role manifest `meta/main.yml`.
 For further details,
 please refer to the Ansible documentation at https://docs.ansible.com/playbooks_roles.html.
 
+By default, this role does nothing as all `*_state` variables are set to `ignored`.
+For the components you're interested in, set the `*_state` variables to `present` or `absent.
 
 
 
