@@ -6,7 +6,7 @@ galaxy_info:
     Assemble your own custom cloud!
     This role handles virtualization, administration and monitoring solutions.
     Check the usage section for the exhaustive list of components.
-    **This role is under development**
+    **!! This role is under development !!**.
   license: MIT
   min_ansible_version: 1.8.4
   platforms:

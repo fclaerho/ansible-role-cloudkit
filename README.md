@@ -1,7 +1,7 @@
 
 <!-- THIS IS A GENERATED FILE, DO NOT EDIT -->
 
-Assemble your own custom cloud! This role handles virtualization, administration and monitoring solutions. Check the usage section for the exhaustive list of components. **This role is under development**
+Assemble your own custom cloud! This role handles virtualization, administration and monitoring solutions. Check the usage section for the exhaustive list of components. **!! This role is under development !!**.
  Version 0.1.
 
 
