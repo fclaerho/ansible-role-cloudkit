@@ -2,6 +2,7 @@
 
 # common
 cloudkit_environment: {}
+cloudkit_update: no
 
 # docker
 cloudkit_docker_autostart: yes

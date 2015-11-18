@@ -1,1 +1,32 @@
 ---
+
+# DOC: https://github.com/retspen/webvirtmgr/wiki/Install-WebVirtMgr
+
+- name: present | Webvirtmgr support packages are present
+  apt:
+    name: "{{ item }}"
+    state: "{{ 'latest' if cloudkit_update else 'present' }}"
+    update_cache: yes
+    cache_valid_time: 3600
+  with_items:
+  - git
+  - python-pip
+  - python-libvirt
+  - python-libxml2
+  - novnc
+  - supervisor
+  - nginx
+  - psmisc
+
+# - name: present | /opt directory is present
+#   file:
+#     path: /opt
+#     state: directory
+#     owner: root
+#     group: root
+#     mode: "755"
+
+- name: present | Webvirtmgr source repository is present
+  git:
+    repo: https://github.com/retspen/webvirtmgr.git
+    dest: /opt/webvirtmgr

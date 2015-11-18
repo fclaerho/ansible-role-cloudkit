@@ -20,6 +20,7 @@ Assemble your own custom cloud! This role provisions virtualization, administrat
 | `cloudkit_docker_port` | _default_ `8090` |  |
 | `cloudkit_docker_state` | _default_ `ignored` |  |
 | `cloudkit_environment` | _default_ `{}` | Common environment variables, such as http_proxy |
+| `cloudkit_update` | _default_ `False` |  |
 | `cloudkit_webvirtmgr_state` | _default_ `ignored` |  |
 
 
