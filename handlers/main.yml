@@ -4,3 +4,8 @@
   service:
     name: docker
     state: reloaded
+
+- name: cloudkit_restart_supervisor
+  service:
+    name: supervisor
+    state: restarted

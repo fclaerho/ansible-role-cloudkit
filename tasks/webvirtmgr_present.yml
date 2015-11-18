@@ -2,7 +2,13 @@
 
 # DOC: https://github.com/retspen/webvirtmgr/wiki/Install-WebVirtMgr
 
-- name: present | Webvirtmgr support packages are present
+- debug:
+    msg: |
+      ****************************
+      * webvirtmgr state=present *
+      ****************************
+
+- name: Webvirtmgr support packages are present
   apt:
     name: "{{ item }}"
     state: "{{ 'latest' if cloudkit_update else 'present' }}"
@@ -17,7 +23,7 @@
   - supervisor
   - nginx
 
-- name: present | /opt directory is present
+- name: /opt directory is present
   file:
     path: /opt
     state: directory
@@ -25,16 +31,29 @@
     group: root
     mode: "755"
 
-- name: present | Webvirtmgr source repository is present
+- name: Webvirtmgr source repository is present
   git:
     repo: https://github.com/retspen/webvirtmgr.git
     dest: /opt/webvirtmgr
 
-- name: present | Webvirtmgr python requirements are present
+- name: Webvirtmgr source repository is set
+  command: chown -R www-data.www-data /opt/webvirtmgr
+
+- name: Webvirtmgr python requirements are present
   pip:
     requirements: /opt/webvirtmgr/requirements.txt
 
-- name: present | Webvirtmgr source repository is  
-  command: chown -R www-data.www-data /opt/webvirtmgr
+- name: Webvirtmgr Supervisor configuration is present
+  copy:
+    src: supervisor.webvirtmgr.conf
+    dest: /etc/supervisor/conf.d/webvirtmgr.conf
+    owner: root
+    group: root
+    mode: "644"
+  notify:
+  - cloudkit_reload_supervisor
 
-
+- name: Supervisor service is started
+  service:
+    name: supervisor
+    state: started

@@ -1,5 +1,11 @@
 ---
 
+- debug:
+    msg: |
+      ************************
+      * docker state=present *
+      ************************
+
 # this is currently broken on Debian 7 as the CA is missing apparently
 # - name: present | Docker installation script is present
 #   environment: "{{ cloudkit_environment }}"
@@ -8,18 +14,18 @@
 #     dest: /var/tmp/install_docker.sh
 #     mode: "700"
 
-- name: present | Docker installation script is present
+- name: Docker installation script is present
   environment: "{{ cloudkit_environment }}"
   command: "curl -sSL https://get.docker.com/ -o {{ cloudkit_docker_installer_path }}"
   args:
     creates: "{{ cloudkit_docker_installer_path }}"
 
-- name: present | Docker is installed
+- name: Docker is installed
   command: "/bin/sh {{ cloudkit_docker_installer_path }}"
   args:
     creates: /usr/bin/docker
 
-- name: present | Docker configuration is present
+- name: Docker configuration is present
   template:
     src: docker.j2
     dest: /etc/default/docker
@@ -29,7 +35,7 @@
   notify:
   - cloudkit_reload_docker
 
-- name: present | Docker service is started
+- name: Docker service is started
   when: cloudkit_docker_autostart
   service:
     name: docker

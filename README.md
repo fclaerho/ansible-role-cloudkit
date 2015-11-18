@@ -1,7 +1,7 @@
 
 <!-- THIS IS A GENERATED FILE, DO NOT EDIT -->
 
-Assemble your own custom cloud! This role provisions virtualization, administration and monitoring solutions. Check the usage section for the exhaustive list of components.
+Assemble your own custom cloud! This role handles virtualization, administration and monitoring solutions. Check the usage section for the exhaustive list of components. **This role is under development**
  Version 0.1.
 
 
@@ -45,7 +45,8 @@ Install [ansible-universe](https://github.com/fclaerho/ansible-universe)
 and run `ansible-universe check` to re-generate this distribution.
 
 The following files are generated or updated based on various role assets:
-  * tasks/main.yml
-  * README.md
+
+  * `tasks/main.yml`
+  * `README.md`
 
 

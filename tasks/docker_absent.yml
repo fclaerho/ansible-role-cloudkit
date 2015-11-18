@@ -1,6 +1,12 @@
 ---
 
-- name: absent | Docker service is stopped
+- debug:
+    msg: |
+      ***********************
+      * docker state=absent *
+      ***********************
+
+- name: Docker service is stopped
   service:
     name: docker
     state: stopped
@@ -9,12 +15,12 @@
 
 # to be completed…
 
-- name: absent | Docker configuration is absent
+- name: Docker configuration is absent
   file:
     path: /etc/default/docker
     state: absent
 
-- name: absent | Docker installation script is absent
+- name: Docker installation script is absent
   file:
     path: "{{ cloudkit_docker_installer_path }}"
     state: absent
