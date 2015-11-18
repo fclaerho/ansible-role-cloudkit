@@ -16,17 +16,25 @@
   - novnc
   - supervisor
   - nginx
-  - psmisc
 
-# - name: present | /opt directory is present
-#   file:
-#     path: /opt
-#     state: directory
-#     owner: root
-#     group: root
-#     mode: "755"
+- name: present | /opt directory is present
+  file:
+    path: /opt
+    state: directory
+    owner: root
+    group: root
+    mode: "755"
 
 - name: present | Webvirtmgr source repository is present
   git:
     repo: https://github.com/retspen/webvirtmgr.git
     dest: /opt/webvirtmgr
+
+- name: present | Webvirtmgr python requirements are present
+  pip:
+    requirements: /opt/webvirtmgr/requirements.txt
+
+- name: present | Webvirtmgr source repository is  
+  command: chown -R www-data.www-data /opt/webvirtmgr
+
+
