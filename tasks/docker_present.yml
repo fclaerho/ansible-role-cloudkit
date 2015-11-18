@@ -1,7 +1,7 @@
 ---
 
 - debug:
-    msg: —————— docker state=present ——————
+    msg: ———————————— docker state=present ————————————
 
 # this is currently broken on Debian 7 as the CA is missing apparently
 # - name: present | Docker installation script is present

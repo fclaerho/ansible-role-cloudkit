@@ -1,7 +1,7 @@
 ---
 
 - debug:
-    msg: —————— docker state=absent ——————
+    msg: ———————————— docker state=absent ————————————
 
 - name: Docker service is stopped
   service:
